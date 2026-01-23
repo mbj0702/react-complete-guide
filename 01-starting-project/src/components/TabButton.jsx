@@ -2,14 +2,18 @@
 //     return <li><button>{props.children}</button></li>
 // }
 
-export default function TabButton({ children }) {
-    function handleClick() {
-        console.log('Hello World!');
-    }
+export default function TabButton({ children, onSelect, isSelected }) {
+      console.log('TABBUTTON COMPONENT EXECUTING');
+
+    // function handleClick() {
+    //     console.log('Hello World!');
+    // }
 
     return (
     <li>
-      <button onClick={handleClick}>{children}</button>
+      <button className={isSelected ? 'active' : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }
